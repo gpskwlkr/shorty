@@ -36,7 +36,7 @@ class Window(QWidget):
 
         # UI initialization
 
-        self.button = QPushButton('Short', self)
+        self.button = QPushButton('Shorten', self)
         self.button.clicked.connect(self.onClick)
         self.button.setMaximumHeight(50)
         self.button.setToolTip('Shorten')
