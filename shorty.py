@@ -81,12 +81,14 @@ class Window(QWidget):
 
     def onClick(self):
         try:
+            
             for service in self.services.values():
                 if service.isChecked():
                     url = self.radioFunctions[service.text()](self.textbox.text())
             res = resultDialog(url)
             res.exec_()
         except: 
+
             err = errorDialog()
             err.exec_()
 

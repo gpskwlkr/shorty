@@ -23,5 +23,6 @@ class errorDialog(QDialog):
         self.label.setAlignment(Qt.AlignCenter)
         self.layout.addWidget(self.label)
 
+
         self.setLayout(self.layout)
         self.show()
