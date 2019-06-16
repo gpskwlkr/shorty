@@ -2,19 +2,29 @@ import sys
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
+from urlCreators.bit_ly import bit
+from urlCreators.tinyURL import tinyurl
+from urlCreators.localhost import local
+from layouts.result import resultWindow
 
 class Window(QWidget): 
 
     def __init__(self):
         super().__init__()
 
+        self.radioFunctions = {'bit.ly' : bit.getShortUrl, 'tinyURL.com' : tinyurl.getShortUrl, 'localhost' : local.getShortUrl}
+
+        self.services = {0 : QRadioButton("bit.ly"), \
+                        1 : QRadioButton("tinyURL.com"), 
+                        2 : QRadioButton("localhost")}
+
+        self.services[0].setChecked(True)
+        self.services[2].setToolTip('For nerds')
+
         # Default geometry configuration
 
-        self.title = 'Shorty'
-        self.width = 500
-        self.height = 200
-        self.setWindowTitle(self.title)
-        self.setFixedSize(self.width, self.height)
+        self.setWindowTitle('Shorty')
+        self.setFixedSize(550, 200)
         self.layout = QVBoxLayout()
 
         # Centering application
@@ -27,7 +37,7 @@ class Window(QWidget):
         # UI initialization
 
         self.button = QPushButton('Short', self)
-        # self.button.clicked.connect(self.onClick)
+        self.button.clicked.connect(self.onClick)
         self.button.setMaximumHeight(50)
         self.button.setToolTip('Shorten')
         self.button.setStyleSheet('border-style: solid; border-width: 2px; border-radius: 8px; border-color: #22323B; font-size: 15px;')
@@ -35,12 +45,15 @@ class Window(QWidget):
         self.label = QLabel('URL')
         self.label.setStyleSheet('margin-top:10px;')
 
+        self.textbox = QLineEdit(self)
+        self.textbox.setStyleSheet('background-color:#243640; border:none; margin-bottom: 10px;')
+        
         self.label.setAlignment(Qt.AlignTop)
         self.layout.setAlignment(Qt.AlignTop)
         
         self.layout.addWidget(self.createServicesGroup())
         self.layout.addWidget(self.label)
-        self.layout.addWidget(self.createURLTextBox())
+        self.layout.addWidget(self.textbox)
         self.layout.addWidget(self.button)
         
         self.setLayout(self.layout)
@@ -49,17 +62,11 @@ class Window(QWidget):
 
     def createServicesGroup(self):
         groupBox = QGroupBox("Preffered service")
-
-        bitly = QRadioButton("bit.ly")
-        googl = QRadioButton("goo.gl")
-        local = QRadioButton("localhost (if you have a server running)")
-
-        bitly.setChecked(True)
-
         vbox = QHBoxLayout()
-        vbox.addWidget(bitly)
-        vbox.addWidget(googl)
-        vbox.addWidget(local)
+
+        for i in self.services.keys():
+            vbox.addWidget(self.services[i])
+
         vbox.addStretch()
         groupBox.setMaximumHeight(100)
         groupBox.setAlignment(Qt.AlignTop)
@@ -67,11 +74,13 @@ class Window(QWidget):
 
         return groupBox
 
-    def createURLTextBox(self):
-        textbox = QLineEdit(self)
-        textbox.setStyleSheet('background-color:#243640; border:none; margin-bottom: 10px;')
-        #textbox.setStyleSheet('border-style: solid; border-width: 2px; border-radius: 8px; border-color: #243640;')
-        return textbox
+    def onClick(self):
+        for service in self.services.values():
+            if service.isChecked():
+                url = self.radioFunctions[service.text()](self.textbox.text())
+        res = resultWindow(url)
+        res.exec_()
+
 
 app = QApplication(sys.argv)
 app.setStyleSheet('* { background-color: #19252B; color:white; }')
