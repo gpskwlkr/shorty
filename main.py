@@ -4,6 +4,7 @@ from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 
 class Window(QWidget): 
+
     def __init__(self):
         super().__init__()
 
@@ -29,9 +30,10 @@ class Window(QWidget):
         # self.button.clicked.connect(self.onClick)
         self.button.setMaximumHeight(50)
         self.button.setToolTip('Shorten')
-        self.button.setStyleSheet('border-style: solid; border-width: 2px; border-radius: 10px; border-color: #22323B; font-size: 16px;')
+        self.button.setStyleSheet('border-style: solid; border-width: 2px; border-radius: 8px; border-color: #22323B; font-size: 15px;')
 
         self.label = QLabel('URL')
+        self.label.setStyleSheet('margin-top:10px;')
 
         self.label.setAlignment(Qt.AlignTop)
         self.layout.setAlignment(Qt.AlignTop)
@@ -67,7 +69,8 @@ class Window(QWidget):
 
     def createURLTextBox(self):
         textbox = QLineEdit(self)
-        textbox.setStyleSheet('background-color:#243640;')
+        textbox.setStyleSheet('background-color:#243640; border:none; margin-bottom: 10px;')
+        #textbox.setStyleSheet('border-style: solid; border-width: 2px; border-radius: 8px; border-color: #243640;')
         return textbox
 
 app = QApplication(sys.argv)
