@@ -21,4 +21,4 @@ Updates - Every week till it's fully ready for usage
 
 # Current visual
 
-![Screenshot](https://raw.githubusercontent.com/gpskwlkr/shorty/master/screenshots/shorty.png)
+![Screenshot](https://raw.githubusercontent.com/gpskwlkr/shorty/master/screenshots/shorty_0.1.png)
