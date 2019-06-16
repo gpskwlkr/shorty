@@ -10,9 +10,13 @@ Updates - Every week till it's fully ready for usage
 
 # Bugs 
 
-1. Currently working only via tinyURL.com, localhost & bit.ly support coming soon. Localhost usage will also be explained once it'll work
+1. <strike>Currently working only via tinyURL.com, localhost & bit.ly support coming soon.</strike> Fixed.
 2. Clipboard is being cleared once you close app on Linux. On Windows it works correctly.
 3. You tell me on giorgianakidze@outlook.com or https://t.me/gpskwlkr
+
+# Localhost usage
+
+By default, Shorty is configured to be used with my localhost URL shortener which is available in this [repo](https://github.com/gpskwlkr/flask-url-shortener).
 
 # Future plans
 

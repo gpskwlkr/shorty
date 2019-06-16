@@ -2,7 +2,7 @@ import sys
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
-from urlCreators.bit_ly import bit
+from urlCreators.hideURL import hide
 from urlCreators.tinyURL import tinyurl
 from urlCreators.localhost import local
 from layouts.result import resultWindow
@@ -12,9 +12,9 @@ class Window(QWidget):
     def __init__(self):
         super().__init__()
 
-        self.radioFunctions = {'bit.ly' : bit.getShortUrl, 'tinyURL.com' : tinyurl.getShortUrl, 'localhost' : local.getShortUrl}
+        self.radioFunctions = {'hideuri.com' : hide.getShortUrl, 'tinyURL.com' : tinyurl.getShortUrl, 'localhost' : local.getShortUrl}
 
-        self.services = {0 : QRadioButton("bit.ly"), \
+        self.services = {0 : QRadioButton("hideuri.com"), \
                         1 : QRadioButton("tinyURL.com"), 
                         2 : QRadioButton("localhost")}
 

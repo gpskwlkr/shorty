@@ -7,8 +7,8 @@ class Local():
         self.baseURL = 'http://localhost:5000/api/'
 
     def getShortUrl(self, url):
-        if url[:8] != 'https://' or url[:7] != 'http://':
-            url = check(url)
-        return json.loads(requests.post(self.baseURL, params = {'url' : url}).text)
+        url = check(url)
+        print(url)
+        return requests.post('http://localhost:5000/api/v1/', json={"url" : url}).json()['url']
 
 local = Local()
