@@ -4,6 +4,7 @@ Lightweight software for shortening your URL without visiting any service for th
 
 # Detailed information 
 
+Built using PyQT5
 Version - 0.1
 Updates - Every week till it's fully ready for usage
 
