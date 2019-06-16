@@ -14,6 +14,10 @@ Updates - Every week till it's fully ready for usage
 2. Clipboard is being cleared once you close app on Linux. On Windows it works correctly.
 3. You tell me on giorgianakidze@outlook.com or https://t.me/gpskwlkr
 
+# Releases
+
+Make sure you have the latest version. [Releases](https://github.com/gpskwlkr/shorty/releases/)
+
 # Localhost usage
 
 By default, while using with localhost, Shorty is configured to be used with my localhost URL shortener which is available in this [repo](https://github.com/gpskwlkr/flask-url-shortener).
