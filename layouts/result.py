@@ -1,9 +1,9 @@
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
-from layouts.ok import okayWindow
+from layouts.ok import okayDialog
 
-class resultWindow(QDialog):
+class resultDialog(QDialog):
     def __init__(self, url):
         super().__init__()
 

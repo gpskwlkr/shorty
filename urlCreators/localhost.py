@@ -8,7 +8,6 @@ class Local():
 
     def getShortUrl(self, url):
         url = check(url)
-        print(url)
         return requests.post(self._base, json={"url" : url}).json()['url']
 
 local = Local()

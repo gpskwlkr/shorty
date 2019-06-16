@@ -1,4 +1,5 @@
 import sys
+import requests
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
@@ -6,7 +7,8 @@ from urlCreators.hideURL import hide
 from urlCreators.tinyURL import tinyurl
 from urlCreators.localhost import local
 from urlCreators.myHeroku import heroku
-from layouts.result import resultWindow
+from layouts.result import resultDialog
+from layouts.errorDialog import errorDialog
 
 class Window(QWidget): 
 
@@ -78,11 +80,15 @@ class Window(QWidget):
         return groupBox
 
     def onClick(self):
-        for service in self.services.values():
-            if service.isChecked():
-                url = self.radioFunctions[service.text()](self.textbox.text())
-        res = resultWindow(url)
-        res.exec_()
+        try:
+            for service in self.services.values():
+                if service.isChecked():
+                    url = self.radioFunctions[service.text()](self.textbox.text())
+            res = resultDialog(url)
+            res.exec_()
+        except requests.exceptions.ConnectionError: 
+            err = errorDialog()
+            err.exec_()
 
 
 app = QApplication(sys.argv)
