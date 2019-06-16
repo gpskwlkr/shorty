@@ -18,11 +18,13 @@ Updates - Every week till it's fully ready for usage
 
 By default, while using with localhost, Shorty is configured to be used with my localhost URL shortener which is available in this [repo](https://github.com/gpskwlkr/flask-url-shortener).
 
-# Future plans
+# My heroku option
 
-1. .exe version coming soon
-2. .deb package coming soon
+My heroku option is using JSON API of my URL shortener which I've already mentioned. Heroku app [link](https://flaskshortener.herokuapp.com/)
 
 # Current visual
 
-![Screenshot](https://raw.githubusercontent.com/gpskwlkr/shorty/master/screenshots/shorty_0.1.png)
+![Screenshot](https://raw.githubusercontent.com/gpskwlkr/shorty/master/screenshots/shorty_0.2.png)
+
+
+![Screenshot](https://raw.githubusercontent.com/gpskwlkr/shorty/master/screenshots/result.png)

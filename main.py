@@ -5,6 +5,7 @@ from PyQt5.QtGui import *
 from urlCreators.hideURL import hide
 from urlCreators.tinyURL import tinyurl
 from urlCreators.localhost import local
+from urlCreators.myHeroku import heroku
 from layouts.result import resultWindow
 
 class Window(QWidget): 
@@ -12,11 +13,13 @@ class Window(QWidget):
     def __init__(self):
         super().__init__()
 
-        self.radioFunctions = {'hideuri.com' : hide.getShortUrl, 'tinyURL.com' : tinyurl.getShortUrl, 'localhost' : local.getShortUrl}
+        self.radioFunctions = {'hideuri.com' : hide.getShortUrl, 'tinyURL.com' : tinyurl.getShortUrl, \
+            'localhost' : local.getShortUrl, 'My Heroku' : heroku.getShortUrl}
 
         self.services = {0 : QRadioButton("hideuri.com"), \
                         1 : QRadioButton("tinyURL.com"), 
-                        2 : QRadioButton("localhost")}
+                        2 : QRadioButton("localhost"),
+                        3 : QRadioButton("My Heroku")}
 
         self.services[0].setChecked(True)
         self.services[2].setToolTip('For nerds')

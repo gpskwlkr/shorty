@@ -10,7 +10,7 @@ class resultWindow(QDialog):
         # Default geometry configuration
 
         self.setWindowTitle('Result')
-        self.setFixedSize(300, 100)
+        self.setFixedSize(500, 100)
         self.layout = QGridLayout()
 
         # Centering result window
