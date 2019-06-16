@@ -17,3 +17,7 @@ Updates - Every week till it's fully ready for usage
 
 1. .exe version coming soon
 2. .deb package coming soon
+
+# Current visual
+
+![Screenshot](https://raw.githubusercontent.com/gpskwlkr/shorty/master/screenshots/shorty.png)
