@@ -16,7 +16,7 @@ Updates - Every week till it's fully ready for usage
 
 # Localhost usage
 
-By default, Shorty is configured to be used with my localhost URL shortener which is available in this [repo](https://github.com/gpskwlkr/flask-url-shortener).
+By default, while using with localhost, Shorty is configured to be used with my localhost URL shortener which is available in this [repo](https://github.com/gpskwlkr/flask-url-shortener).
 
 # Future plans
 
