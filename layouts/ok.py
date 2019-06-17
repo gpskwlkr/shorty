@@ -2,7 +2,7 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 
-class okayWindow(QWidget):
+class okayWindow(QDialog):
     def __init__(self):
         super().__init__()
 
@@ -28,4 +28,3 @@ class okayWindow(QWidget):
         # self.layout.addWidget(self.button, 0, 0)
         self.setLayout(self.layout)
         self.show()
-

@@ -3,7 +3,7 @@ from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from layouts.ok import okayWindow
 
-class resultWindow(QWidget):
+class resultWindow(QDialog):
     def __init__(self, url):
         super().__init__()
 
