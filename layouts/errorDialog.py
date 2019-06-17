@@ -19,7 +19,7 @@ class errorDialog(QDialog):
         self.mainGeometry.moveCenter(centralPosition)
         self.move(self.mainGeometry.topLeft())
 
-        self.label = QLabel('ConnectionError occured, check your settings')
+        self.label = QLabel('An error has occured, check your settings')
         self.label.setAlignment(Qt.AlignCenter)
         self.layout.addWidget(self.label)
 

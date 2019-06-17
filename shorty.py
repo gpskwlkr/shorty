@@ -86,7 +86,7 @@ class Window(QWidget):
                     url = self.radioFunctions[service.text()](self.textbox.text())
             res = resultDialog(url)
             res.exec_()
-        except requests.exceptions.ConnectionError: 
+        except: 
             err = errorDialog()
             err.exec_()
 
