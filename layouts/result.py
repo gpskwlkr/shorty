@@ -46,7 +46,7 @@ class resultDialog(QDialog):
 
     def copy(self):
         self.qclip.setText(self.label.text(), mode=self.qclip.Clipboard)
-        ok = okayWindow()
+        ok = okayDialog()
         button = QPushButton('Close')
         button.setToolTip('Close window')
         button.setIcon(QIcon('graphics/tick.png'))
